@@ -1,0 +1,43 @@
+<block>
+  <name>CCSDS ASM Deframer</name>
+  <key>ccsds_asm_deframer</key>
+  <category>CCSDS</category>
+  <import>import ccsds</import>
+  <make>ccsds.asm_deframer($distance,$interleave,$randomise)</make>
+  <callback>set_distance($distance,$randomise)</callback>
+  <callback>set_interleave($interleave,$randomise)</callback>
+  <param>
+    <name>Distance</name>
+    <key>distance</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Interleave</name>
+    <key>interleave</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Randomise</name>
+    <key>randomise</key>
+    <value>False</value>
+		<type>int</type>
+		<option>
+			<name>Yes</name>
+			<key>1</key>
+		</option>
+		<option>
+			<name>No</name>
+			<key>0</key>
+		</option>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

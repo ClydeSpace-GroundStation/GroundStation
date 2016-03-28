@@ -1,0 +1,28 @@
+/* -*- c++ -*- */
+
+#define CCSDS_API
+
+%include "gnuradio.i"			// the common stuff
+
+//load generated python docstrings
+%include "ccsds_swig_doc.i"
+
+%{
+#include "ccsds/asm_deframer.h"
+#include "ccsds/rs_encode.h"
+#include "ccsds/add.h"
+#include "ccsds/gr_ccsds.h"
+#include "ccsds/rs_decode.h"
+%}
+
+
+%include "ccsds/asm_deframer.h"
+GR_SWIG_BLOCK_MAGIC2(ccsds, asm_deframer);
+%include "ccsds/rs_encode.h"
+GR_SWIG_BLOCK_MAGIC2(ccsds, rs_encode);
+%include "ccsds/add.h"
+GR_SWIG_BLOCK_MAGIC2(ccsds, add);
+%include "ccsds/gr_ccsds.h"
+GR_SWIG_BLOCK_MAGIC2(ccsds, gr_ccsds);
+%include "ccsds/rs_decode.h"
+GR_SWIG_BLOCK_MAGIC2(ccsds, rs_decode);

@@ -1,0 +1,28 @@
+<block>
+  <name>CCSDS ASM Deframer</name>
+  <key>ccsds_asm_deframer</key>
+  <category>CCSDS</category>
+  <import>import ccsds</import>
+  <make>ccsds.asm_deframer($distance,$randomise)</make>
+  <callback>set_distance($distance,$randomise)</callback>
+  <param>
+    <name>Distance</name>
+    <key>distance</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Randomise</name>
+    <key>randomise</key>
+    <value>0</value>
+    <type>bool</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

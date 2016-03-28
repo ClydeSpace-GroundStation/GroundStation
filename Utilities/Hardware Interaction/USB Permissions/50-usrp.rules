@@ -1,0 +1,1 @@
+ACTION==add, SUBSYSTEMS==usb, ATTRS{idVendor}==2500, ATTRS{idProduct}==0020, MODE=660, GROUP=plugdev

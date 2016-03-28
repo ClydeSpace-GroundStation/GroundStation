@@ -1,0 +1,22 @@
+<block>
+  <name>RS(223,225) Encoder </name>
+  <key>ccsds_rs_encode</key>
+  <category>CCSDS</category>
+  <import>import ccsds</import>
+  <make>ccsds.rs_encode($interleave)</make>
+  <callback>set_interleave($interleave)</callback>
+  <param>
+    <name>Interleave</name>
+    <key>interleave</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

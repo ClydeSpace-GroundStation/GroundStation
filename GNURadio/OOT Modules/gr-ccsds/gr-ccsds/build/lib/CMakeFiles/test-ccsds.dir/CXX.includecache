@@ -1,0 +1,62 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gs-laptop1/Groundstation/GNURadio/OOT Modules/CCSDS/gr-ccsds/lib/qa_ccsds.cc
+qa_ccsds.h
+/home/gs-laptop1/Groundstation/GNURadio/OOT Modules/CCSDS/gr-ccsds/lib/qa_ccsds.h
+
+/home/gs-laptop1/Groundstation/GNURadio/OOT Modules/CCSDS/gr-ccsds/lib/qa_ccsds.h
+gnuradio/attributes.h
+-
+cppunit/TestSuite.h
+-
+
+/home/gs-laptop1/Groundstation/GNURadio/OOT Modules/CCSDS/gr-ccsds/lib/test_ccsds.cc
+config.h
+/home/gs-laptop1/Groundstation/GNURadio/OOT Modules/CCSDS/gr-ccsds/lib/config.h
+cppunit/TextTestRunner.h
+-
+cppunit/XmlOutputter.h
+-
+gnuradio/unittests.h
+-
+qa_ccsds.h
+/home/gs-laptop1/Groundstation/GNURadio/OOT Modules/CCSDS/gr-ccsds/lib/qa_ccsds.h
+iostream
+-
+fstream
+-
+
+/usr/local/include/gnuradio/api.h
+gnuradio/attributes.h
+-
+
+/usr/local/include/gnuradio/attributes.h
+
+/usr/local/include/gnuradio/unittests.h
+gnuradio/api.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+unistd.h
+-
+string
+-
+boost/filesystem/operations.hpp
+-
+boost/filesystem/path.hpp
+-
+
