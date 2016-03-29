@@ -16,7 +16,7 @@ port = 0
 addr = 0x28
 
 # data settings
-number_bytes = 256
+number_bytes = 64
 
 # find all the attached devices
 print "Detecting Aardvark adapters..."
@@ -40,9 +40,19 @@ aa_i2c_pullup(handle, AA_I2C_PULLUP_BOTH)
 bitrate = aa_i2c_bitrate(handle, I2C_BITRATE)
 
 # create the data to send
-data_out = array('B',range(number_bytes))
+ramp = range(number_bytes)
+asm = [0x1A, 0xCF, 0xFC, 0x1D]
+message = (map(ord,"Testing the CMC radio. "))
+data = ramp + asm + message + asm + message + asm + message
+data_out = array('B',data)
 
 #data_out = array('B',[0xAA, 0x01, 0x02, 0x03, 0x04, 0x01, 0x02, 0x03, 0x04, 0xAA])
+
+# point to ready signals register
+count = aa_i2c_write(handle, addr, AA_I2C_NO_FLAGS, array('B',[0x1A, 0x1A]))
+
+# point to tx data register
+count = aa_i2c_write(handle, addr, AA_I2C_NO_FLAGS, array('B',[0x03, 0x03]))
 
 # write the data to the bus
 count = aa_i2c_write(handle, addr, AA_I2C_NO_FLAGS, data_out)

@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Mon Mar 28 13:28:00 2016
+# Generated: Mon Mar 28 17:17:11 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -32,7 +32,7 @@ from gnuradio.qtgui import Range, RangeWidget
 from optparse import OptionParser
 import ais
 import ccsds
-import display
+import pyqt
 import sip
 import sys
 import time
@@ -91,11 +91,55 @@ class top_block(gr.top_block, Qt.QWidget):
         self.uhd_usrp_source_0.set_center_freq(centre_freq, 0)
         self.uhd_usrp_source_0.set_gain(gain, 0)
         self.uhd_usrp_source_0.set_bandwidth(bandwidth, 0)
-        self.show_text_0 = display.show_text()
-        self._show_text_0_win = sip.wrapinstance(self.show_text_0.pyqwidget(), Qt.QWidget)
-        self.top_layout.addWidget(self._show_text_0_win)
-        self.qtgui_time_sink_x_0 = qtgui.time_sink_f(
+        self.qtgui_time_sink_x_0_0 = qtgui.time_sink_f(
         	2048, #size
+        	bitrate, #samp_rate
+        	"", #name
+        	1 #number of inputs
+        )
+        self.qtgui_time_sink_x_0_0.set_update_time(0.10)
+        self.qtgui_time_sink_x_0_0.set_y_axis(-128, 128)
+        
+        self.qtgui_time_sink_x_0_0.set_y_label("Amplitude", "")
+        
+        self.qtgui_time_sink_x_0_0.enable_tags(-1, True)
+        self.qtgui_time_sink_x_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
+        self.qtgui_time_sink_x_0_0.enable_autoscale(False)
+        self.qtgui_time_sink_x_0_0.enable_grid(False)
+        self.qtgui_time_sink_x_0_0.enable_axis_labels(True)
+        self.qtgui_time_sink_x_0_0.enable_control_panel(False)
+        
+        if not True:
+          self.qtgui_time_sink_x_0_0.disable_legend()
+        
+        labels = ["", "", "", "", "",
+                  "", "", "", "", ""]
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "green", "black", "cyan",
+                  "magenta", "yellow", "dark red", "dark green", "blue"]
+        styles = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        markers = [-1, -1, -1, -1, -1,
+                   -1, -1, -1, -1, -1]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+        
+        for i in xrange(1):
+            if len(labels[i]) == 0:
+                self.qtgui_time_sink_x_0_0.set_line_label(i, "Data {0}".format(i))
+            else:
+                self.qtgui_time_sink_x_0_0.set_line_label(i, labels[i])
+            self.qtgui_time_sink_x_0_0.set_line_width(i, widths[i])
+            self.qtgui_time_sink_x_0_0.set_line_color(i, colors[i])
+            self.qtgui_time_sink_x_0_0.set_line_style(i, styles[i])
+            self.qtgui_time_sink_x_0_0.set_line_marker(i, markers[i])
+            self.qtgui_time_sink_x_0_0.set_line_alpha(i, alphas[i])
+        
+        self._qtgui_time_sink_x_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._qtgui_time_sink_x_0_0_win)
+        self.qtgui_time_sink_x_0 = qtgui.time_sink_f(
+        	16, #size
         	bitrate, #samp_rate
         	"", #name
         	1 #number of inputs
@@ -141,6 +185,9 @@ class top_block(gr.top_block, Qt.QWidget):
         
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.pyqwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
+        self.pyqt_meta_text_output_0 = pyqt.meta_text_output()
+        self._pyqt_meta_text_output_0_win = self.pyqt_meta_text_output_0;
+        self.top_layout.addWidget(self._pyqt_meta_text_output_0_win)
         self.fosphor_qt_sink_c_0 = fosphor.qt_sink_c()
         self.fosphor_qt_sink_c_0.set_fft_window(window.WIN_BLACKMAN_hARRIS)
         self.fosphor_qt_sink_c_0.set_frequency_range(0, samp_rate)
@@ -155,10 +202,11 @@ class top_block(gr.top_block, Qt.QWidget):
         	verbose=False,
         	log=False,
         )
-        self.ccsds_asm_deframer_0 = ccsds.asm_deframer(2,1,False,16)
+        self.ccsds_asm_deframer_0 = ccsds.asm_deframer(0,1,False,16)
         self.blocks_unpacked_to_packed_xx_0 = blocks.unpacked_to_packed_bb(1, gr.GR_MSB_FIRST)
-        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, "/home/gs-laptop1/GroundStation/GroundStation/GNURadio/Test Files/Simple GMSK Receive/out.bin", False)
-        self.blocks_file_sink_0.set_unbuffered(False)
+        self.blocks_tagged_stream_to_pdu_0 = blocks.tagged_stream_to_pdu(blocks.byte_t, "packet_length")
+        self.blocks_socket_pdu_0 = blocks.socket_pdu("TCP_CLIENT", "127.0.0.1 ", "51423", 1024, False)
+        self.blocks_char_to_float_0_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
         self.analog_pwr_squelch_xx_0 = analog.pwr_squelch_cc(-40, 1e-4, 0, True)
         self.ais_invert_0 = ais.invert()
@@ -166,14 +214,17 @@ class top_block(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
+        self.msg_connect((self.blocks_tagged_stream_to_pdu_0, 'pdus'), (self.blocks_socket_pdu_0, 'pdus'))    
+        self.msg_connect((self.blocks_tagged_stream_to_pdu_0, 'pdus'), (self.pyqt_meta_text_output_0, 'pdus'))    
+        self.connect((self.ais_invert_0, 0), (self.blocks_unpacked_to_packed_xx_0, 0))    
         self.connect((self.ais_invert_0, 0), (self.ccsds_asm_deframer_0, 0))    
         self.connect((self.analog_pwr_squelch_xx_0, 0), (self.digital_gmsk_demod_0, 0))    
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_0, 0))    
-        self.connect((self.blocks_unpacked_to_packed_xx_0, 0), (self.blocks_char_to_float_0, 0))    
-        self.connect((self.blocks_unpacked_to_packed_xx_0, 0), (self.blocks_file_sink_0, 0))    
-        self.connect((self.ccsds_asm_deframer_0, 0), (self.show_text_0, 0))    
+        self.connect((self.blocks_char_to_float_0_0, 0), (self.qtgui_time_sink_x_0_0, 0))    
+        self.connect((self.blocks_unpacked_to_packed_xx_0, 0), (self.blocks_char_to_float_0_0, 0))    
+        self.connect((self.ccsds_asm_deframer_0, 0), (self.blocks_char_to_float_0, 0))    
+        self.connect((self.ccsds_asm_deframer_0, 0), (self.blocks_tagged_stream_to_pdu_0, 0))    
         self.connect((self.digital_gmsk_demod_0, 0), (self.ais_invert_0, 0))    
-        self.connect((self.digital_gmsk_demod_0, 0), (self.blocks_unpacked_to_packed_xx_0, 0))    
         self.connect((self.uhd_usrp_source_0, 0), (self.analog_pwr_squelch_xx_0, 0))    
         self.connect((self.uhd_usrp_source_0, 0), (self.fosphor_qt_sink_c_0, 0))    
 
@@ -197,6 +248,7 @@ class top_block(gr.top_block, Qt.QWidget):
         self.bitrate = bitrate
         self.set_samp_rate(self.samples_per_symbol*self.bitrate)
         self.qtgui_time_sink_x_0.set_samp_rate(self.bitrate)
+        self.qtgui_time_sink_x_0_0.set_samp_rate(self.bitrate)
 
     def get_samp_rate(self):
         return self.samp_rate

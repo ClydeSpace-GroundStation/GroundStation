@@ -1,0 +1,10 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gs-laptop1/GroundStation/GroundStation/GNURadio/OOT Modules/gr-ccsds/build/swig/ccsds_swig_swig_2d0df.cpp
+

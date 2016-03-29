@@ -1,0 +1,10 @@
+/home/gs-laptop1/GroundStation/GroundStation/GNURadio/OOT Modules/gr-ccsds/build/python/CMakeFiles/pygen_python_053b6.dir
+/home/gs-laptop1/GroundStation/GroundStation/GNURadio/OOT Modules/gr-ccsds/build/lib/CMakeFiles/test-ccsds.dir
+/home/gs-laptop1/GroundStation/GroundStation/GNURadio/OOT Modules/gr-ccsds/build/apps/CMakeFiles/pygen_apps_9a6dd.dir
+/home/gs-laptop1/GroundStation/GroundStation/GNURadio/OOT Modules/gr-ccsds/build/CMakeFiles/uninstall.dir
+/home/gs-laptop1/GroundStation/GroundStation/GNURadio/OOT Modules/gr-ccsds/build/swig/CMakeFiles/_ccsds_swig.dir
+/home/gs-laptop1/GroundStation/GroundStation/GNURadio/OOT Modules/gr-ccsds/build/swig/CMakeFiles/pygen_swig_b9927.dir
+/home/gs-laptop1/GroundStation/GroundStation/GNURadio/OOT Modules/gr-ccsds/build/swig/CMakeFiles/ccsds_swig_swig_doc.dir
+/home/gs-laptop1/GroundStation/GroundStation/GNURadio/OOT Modules/gr-ccsds/build/lib/CMakeFiles/gnuradio-ccsds.dir
+/home/gs-laptop1/GroundStation/GroundStation/GNURadio/OOT Modules/gr-ccsds/build/swig/CMakeFiles/ccsds_swig_swig_2d0df.dir
+/home/gs-laptop1/GroundStation/GroundStation/GNURadio/OOT Modules/gr-ccsds/build/swig/CMakeFiles/_ccsds_swig_swig_tag.dir

@@ -44,7 +44,7 @@ bitrate = aa_i2c_bitrate(handle, I2C_BITRATE)
 
 asm = [0x1A, 0xCF, 0xFC, 0x1D]
 message = (map(ord,"Testing the CMC radio. "))
-data = asm + message + asm + message + asm + message
+data = asm + message + asm + message + asm + message + asm + message + asm + message + asm + message + asm + message + asm + message
 data_out = array('B',data)
 
 # print data_out

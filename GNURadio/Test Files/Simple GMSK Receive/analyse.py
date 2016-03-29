@@ -9,12 +9,12 @@ from matplotlib.pyplot import *
 np.set_printoptions(formatter={'int':hex})
 
 # read in the data streams
-input = np.array(scipy.fromfile(open("/home/gs-laptop1/Groundstation/GNURadio/GMSK/out.bin"), dtype=scipy.uint8))
+input = np.array(scipy.fromfile(open("/home/gs-laptop1/GroundStation/GroundStation/GNURadio/Test Files/Simple GMSK Receive/out.bin"), dtype=scipy.uint8))
 
 plot(input)
 show()
 
-print input[2000:2083]
+print input[840:870]
 
 
 message = "Testing the CMC radio."
