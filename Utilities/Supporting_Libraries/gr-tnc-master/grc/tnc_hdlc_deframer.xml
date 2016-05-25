@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<block>
+  <name>HDLC Decoder</name>
+  <key>tnc_hdlc_deframer</key>
+  <category>tnc</category>
+  <import>import tnc</import>
+  <make>tnc.hdlc_deframer()</make>
+
+	<sink>
+		<name>in</name>
+		<type>byte</type>
+	</sink>
+
+	<source>
+		<name>out</name>
+		<type>message</type>
+	</source>
+</block>

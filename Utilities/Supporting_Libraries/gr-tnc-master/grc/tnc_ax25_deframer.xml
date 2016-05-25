@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<block>
+  <name>AX25 Deframer</name>
+  <key>tnc_ax25_deframer</key>
+  <category>tnc</category>
+  <import>import tnc</import>
+  <make>tnc.ax25_deframer(mycall=$mycall,verbose=$verbose)</make>
+  <param>
+    <name>My Callsign (no function)</name>
+    <key>mycall</key>
+    <type>string</type>
+  </param>
+  
+   
+    <param>
+        <name>Verbose</name>
+        <key>verbose</key>
+        <value>False</value>
+        <type>bool</type>
+        <option>
+			<name>True</name>
+			<key>True</key>
+		</option>
+        <option>
+			<name>False</name>
+			<key>False</key>
+		</option>
+    </param>
+
+   <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+    
+</block>

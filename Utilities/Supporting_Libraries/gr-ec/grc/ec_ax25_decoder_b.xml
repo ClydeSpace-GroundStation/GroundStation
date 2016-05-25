@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+###################################################
+##AX.25 Decoder
+###################################################
+ -->
+<block>
+	<name>AX.25 Decoder</name>
+	<key>ec_ax25_decoder_b</key>
+	<category>ec</category>
+	<import>import ec</import>
+	<make>ec.ax25_decoder_b($printing, $print_to_file, $filename)</make>
+	<!-- <make>ec.ax25_decoder_b($(id)_msgq_out, $printing, $print_to_file, $filename)</make> -->
+	<param>
+		<name>Printing</name>
+		<key>printing</key>
+		<value>True</value>
+		<type>bool</type>
+		<option>
+				<name>On</name>
+				<key>True</key>
+		</option>
+		<option>
+				<name>Off</name>
+				<key>False</key>
+		</option>
+	</param>
+	<param>
+		<name>Print To File</name>
+		<key>print_to_file</key>
+		<value>0</value>
+		<type>int</type>
+		<option>
+				<name>No file output</name>
+				<key>0</key>
+		</option>
+		<option>
+				<name>Compact output</name>
+				<key>1</key>
+		</option>
+		<option>
+				<name>Detailed output</name>
+				<key>2</key>
+		</option>
+	</param>
+	<param>
+		<name>File</name>
+		<key>filename</key>
+		<value></value>
+		<type>file_save</type>
+	</param>
+	<sink>
+		<name>in</name>
+		<type>byte</type>
+	</sink>
+	<!-- <source>
+		<name>out</name>
+		<type>msg</type>
+	</source> -->
+	<source>
+		<name>pdus</name>
+		<type>message</type>
+	</source>
+</block>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+###################################################
+##Descrambler
+###################################################
+ -->
+<block>
+	<name>Descrambler</name>
+	<key>ec_descrambler_bb</key>
+	<category>ec</category>
+	<import>import ec</import>
+	<make>ec.descrambler_bb($tap_mask, $preload)</make>
+	<param>
+		<name>Tap Mask</name>
+		<key>tap_mask</key>
+		<value>135168</value>
+		<type>int</type>
+	</param>
+	<param>
+		<name>Preload</name>
+		<key>preload</key>
+		<value>0</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>in</name>
+		<type>byte</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>byte</type>
+	</source>
+</block>

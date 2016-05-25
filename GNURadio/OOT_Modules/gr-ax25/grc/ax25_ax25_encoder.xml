@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<block>
+  <name>AX.25 Encoder</name>
+  <key>ax25_ax25_encoder</key>
+  <category>AX.25</category>
+  <import>import ax25</import>
+  <make>ax25.ax25_encoder($dest_addr, $src_addr, $dest_ssid, $src_ssid)</make>
+  <param>
+    <name>Destination Callsign</name>
+    <key>dest_addr</key>
+    <value>"SPACE "</value>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Source Callsign</name>
+    <key>src_addr</key>
+    <value>"EARTH "</value>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Destination SSID</name>
+    <key>dest_ssid</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Source SSID</name>
+    <key>src_ssid</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>pdu_in</name>
+    <type>message</type>
+  </sink>
+  <source>
+    <name>pdu_out</name>
+    <type>message</type>
+  </source>
+</block>

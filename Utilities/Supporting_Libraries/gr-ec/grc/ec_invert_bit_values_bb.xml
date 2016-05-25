@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+###################################################
+##Invert Bit Values
+###################################################
+ -->
+<block>
+	<name>Invert Bit Values</name>
+	<key>ec_invert_bit_values_bb</key>
+	<category>ec</category>
+	<import>import ec</import>
+	<make>ec.invert_bit_values_bb()</make>
+	<sink>
+		<name>in</name>
+		<type>byte</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>byte</type>
+	</source>
+</block>

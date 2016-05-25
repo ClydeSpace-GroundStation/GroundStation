@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<block>
+  <name>Serial to PDU</name>
+  <key>tnc_serial_io</key>
+  <category>tnc</category>
+  <import>import tnc</import>
+  <make>tnc.serial_io($device,$parity,$baudrate,$stopbits,$bytesize,$waitfornewline)</make>
+    <param>
+        <name>Device Path</name>
+        <key>device</key>
+        <type>string</type>
+    </param>
+    <param>
+        <name>Stop Bits</name>
+        <key>stopbits</key>
+        <type>int</type>
+        <option>
+			<name>ONE</name>
+			<key>0</key>
+		</option>
+        <option>
+			<name>TWO</name>
+			<key>1</key>
+		</option>
+    </param>
+    <param>
+    <name>Parity</name>
+        <key>parity</key>
+        <type>int</type>
+        <option>
+			<name>NONE</name>
+			<key>0</key>
+		</option>
+        <option>
+			<name>EVEN</name>
+			<key>1</key>
+		</option>
+        <option>
+			<name>ODD</name>
+			<key>2</key>
+		</option>
+    </param>
+    <param>
+    <name>Byte Size</name>
+        <key>bytesize</key>
+        <type>int</type>
+        <option>
+			<name>7</name>
+			<key>0</key>
+		</option>
+        <option>
+			<name>8</name>
+			<key>1</key>
+        </option>
+    </param>
+    <param>
+    <name>Wait For New Line?</name>
+        <key>waitfornewline</key>
+        <type>bool</type>
+        <option>
+			<name>Yes</name>
+			<key>True</key>
+		</option>
+        <option>
+			<name>No</name>
+			<key>False</key>
+        </option>
+    </param>
+    <param>
+        <name>Buad Rate</name>
+        <key>baudrate</key>
+        <type>int</type>
+    </param>
+    
+  <sink>
+    <name>in</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+  
+   <sink>
+    <name>ctrl</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+  
+  <source>
+    <name>ctrl</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+  
+  
+</block>

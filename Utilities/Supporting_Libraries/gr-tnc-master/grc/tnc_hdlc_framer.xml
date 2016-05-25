@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<block>
+  <name>HDLC Encoder</name>
+  <key>tnc_hdlc_framer</key>
+  <category>tnc</category>
+  <import>import tnc</import>
+  <make>tnc.hdlc_framer(preamble_length=$preamble_length, postamble_length=$postamble_length,verbose=$verbose, use_scrambler=$use_scrambler)</make>
+  <param>
+    <name>Preamble Length (bytes)</name>
+    <key>preamble_length</key>
+    <value>50</value>
+    <type>int</type>
+  </param>
+    <param>
+    <name>Postamble Length (bytes)</name>
+    <key>postamble_length</key>
+    <value>7</value>
+    <type>int</type>
+  </param>
+    <param>
+        <name>Verbose</name>
+        <key>verbose</key>
+        <value>False</value>
+        <type>bool</type>
+        <option>
+			<name>True</name>
+			<key>True</key>
+		</option>
+        <option>
+			<name>False</name>
+			<key>False</key>
+		</option>
+    </param>
+    <param>
+        <name>Use Scrambler</name>
+        <key>use_scrambler</key>
+        <value>False</value>
+        <type>bool</type>
+        <option>
+			<name>True</name>
+			<key>True</key>
+		</option>
+        <option>
+			<name>False</name>
+			<key>False</key>
+		</option>
+    </param>
+
+   <sink>
+    <name>in</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+    
+</block>

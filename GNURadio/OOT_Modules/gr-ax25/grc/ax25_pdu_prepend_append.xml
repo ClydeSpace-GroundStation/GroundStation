@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<block>
+  <name>PDU Prepend/Append Bytes</name>
+  <key>ax25_pdu_prepend_append</key>
+  <category>AX.25</category>
+  <import>import ax25</import>
+  <make>ax25.pdu_prepend_append($prepend_length, $append_length, $fill_byte)</make>
+  <param>
+    <name>Prepend Length</name>
+    <key>prepend_length</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Append Length</name>
+    <key>append_length</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Fill Byte</name>
+    <key>fill_byte</key>
+    <value>0xAA</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>pdu_in</name>
+    <type>message</type>
+  </sink>
+  <source>
+    <name>pdu_out</name>
+    <type>message</type>
+  </source>
+</block>

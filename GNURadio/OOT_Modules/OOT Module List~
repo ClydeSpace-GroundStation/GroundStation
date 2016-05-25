@@ -1,0 +1,10 @@
+The following OOT modules are contained in this folder:
+
+GR-CCSDS
+	GNURadio library which implements some aspects of the CCSDS TM Synchronisation and Channel Coding
+	 - CCSDS ASM Deframer - Find the ASM and deliver the following transfer frame.  The option to derandomise the data is provided
+	 - CCSDS ASM Deframer PDU - Find the ASM and deliver the following transfer frame.  The option to derandomise the data is provided.  The output is RS codeblock PDU
+	 - RS(223,255) Decoder - Reed Solomon decoder, supports interleaving
+	 - RS(223,255) Encoder - Reed Solomon encoder, supports interleaving
+	 - RS(223,255) Decoder PDU - Reed Solomon decoder, supports interleaving.  The input and outputs are PDUs containing a RS codeblock
+	 - RS(223,255) Encoder PDU - Reed Solomon encoder, supports interleaving.  The input and outputs are PDUs containing a RS codeblock

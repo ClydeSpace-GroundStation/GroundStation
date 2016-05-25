@@ -1,0 +1,22 @@
+<block>
+  <name>RS(223,225) Decoder PDU </name>
+  <key>ccsds_rs_decode_pdu</key>
+  <category>CCSDS</category>
+  <import>import ccsds</import>
+  <make>ccsds.rs_decode_pdu($interleave)</make>
+  <callback>set_interleave($interleave)</callback>
+  <param>
+    <name>Interleave</name>
+    <key>interleave</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>pdu_in</name>
+    <type>message</type>
+  </sink>
+  <source>
+    <name>pdu_out</name>
+    <type>message</type>
+  </source>
+</block>

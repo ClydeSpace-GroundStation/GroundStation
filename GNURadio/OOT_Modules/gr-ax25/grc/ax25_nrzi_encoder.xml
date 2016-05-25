@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<block>
+  <name>NRZI Encoder</name>
+  <key>ax25_nrzi_encoder</key>
+  <category>AX.25</category>
+  <import>import ax25</import>
+  <make>ax25.nrzi_encoder($polarity)</make>
+  <param>
+    <name>Polarity of Invert</name>
+    <key>polarity</key>
+    <value>Low</value>
+    <type>int</type>
+    <option>
+      <name>High</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>Low</name>
+      <key>0</key>
+    </option>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

@@ -1,0 +1,26 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.pyc
+*.swp
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# the build directory
+build
+
+# Old edits
+*~
+
+# GNURadio Files
+top_block.py
+.unittests
+examples/*.py
