@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<block>
+  <name>Binary Symmetric Channel</name>
+  <key>channelcoding_binary_symmetric_channel</key>
+  <category>Channel Coding</category>
+  <import>import channelcoding</import>
+  <make>channelcoding.binary_symmetric_channel($ber,$bits_per_byte,$seed)</make>
+  <param>
+		<name>Bit error rate</name>
+		<key>ber</key>
+		<value>0.1</value>
+		<type>real</type>
+	</param>
+	<param>
+		<name>Bits per byte</name>
+		<key>bits_per_byte</key>
+		<value>1</value>
+		<type>int</type>
+		<option>
+			<name>1</name>
+			<key>1</key>
+		</option>
+		<option>
+			<name>2</name>
+			<key>2</key>
+		</option>
+		<option>
+			<name>3</name>
+			<key>3</key>
+		</option>
+		<option>
+			<name>4</name>
+			<key>4</key>
+		</option>
+		<option>
+			<name>5</name>
+			<key>5</key>
+		</option>
+		<option>
+			<name>6</name>
+			<key>6</key>
+		</option>
+		<option>
+			<name>7</name>
+			<key>7</key>
+		</option>
+		<option>
+			<name>8</name>
+			<key>8</key>
+		</option>
+	</param>
+  <param>
+		<name>Seed</name>
+		<key>seed</key>
+		<value>1653</value>
+		<type>int</type>
+	</param>
+	<sink>
+		<name>in</name>
+		<type>byte</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>byte</type>
+	</source>
+</block>

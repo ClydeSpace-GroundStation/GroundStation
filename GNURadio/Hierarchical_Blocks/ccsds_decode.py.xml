@@ -1,0 +1,37 @@
+<block>
+  <name>CCSDS Channel Decoding</name>
+  <key>ccsds_decode</key>
+  <category>Clyde Space</category>
+  <import>from ccsds_decode import ccsds_decode  # grc-generated hier_block</import>
+  <make>ccsds_decode(
+    hamming_distance=$hamming_distance,
+    interleave=$interleave,
+)</make>
+  <callback>set_hamming_distance($hamming_distance)</callback>
+  <callback>set_interleave($interleave)</callback>
+  <param>
+    <name>Hamming Distance</name>
+    <key>hamming_distance</key>
+    <value>4</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Interleave Depth</name>
+    <key>interleave</key>
+    <value>4</value>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+    <vlen>1</vlen>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+  <doc>Thomas Parry
+Block to perform the channel decoding as defined in the CCSDS channel coding standard
+/home/thomasp/.grc_gnuradio/ccsds_decode.py</doc>
+  <grc_source>/home/thomasp/GroundStation/GNURadio/Hierarchical_Blocks/CCSDS_Channel_Decode.grc</grc_source>
+</block>

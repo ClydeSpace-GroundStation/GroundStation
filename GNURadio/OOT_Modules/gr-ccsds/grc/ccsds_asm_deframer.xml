@@ -6,7 +6,7 @@
   <make>ccsds.asm_deframer($distance,$interleave,$randomise,$block_size)</make>
   <callback>set_distance($distance,$distance)</callback>
   <callback>set_interleave($interleave,$interleave)</callback>
-  <callback>set_radnomise($randomise,$randomise)</callback>
+  <callback>set_randomise($randomise,$randomise)</callback>
   <callback>set_block_size($block_size,$block_size)</callback>
   <param>
     <name>Distance</name>

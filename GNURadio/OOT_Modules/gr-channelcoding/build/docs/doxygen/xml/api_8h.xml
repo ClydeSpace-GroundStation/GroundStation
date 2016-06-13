@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="api_8h" kind="file" language="C++">
+    <compoundname>api.h</compoundname>
+    <includes local="no">gnuradio/attributes.h</includes>
+    <includedby refid="binary__symmetric__channel_8h" local="no">binary_symmetric_channel.h</includedby>
+    <incdepgraph>
+      <node id="0">
+        <label>api.h</label>
+        <link refid="api.h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gnuradio/attributes.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>api.h</label>
+        <link refid="api.h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>binary_symmetric_channel_impl.h</label>
+        <link refid="binary__symmetric__channel__impl_8h"/>
+      </node>
+      <node id="3">
+        <label>binary_symmetric_channel.h</label>
+        <link refid="binary__symmetric__channel_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="api_8h_1a2997e5a364a7ef0b05d6b4913cd23a6f" prot="public" static="no">
+        <name>CHANNELCODING_API</name>
+        <initializer>__GR_ATTR_IMPORT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/include/channelcoding/api.h" line="30" column="12" bodyfile="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/include/channelcoding/api.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/include/channelcoding/api.h"/>
+  </compounddef>
+</doxygen>

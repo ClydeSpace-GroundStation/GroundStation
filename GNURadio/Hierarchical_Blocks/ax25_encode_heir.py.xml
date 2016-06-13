@@ -1,0 +1,93 @@
+<block>
+  <name>AX.25 Encoding Heir Block</name>
+  <key>ax25_encode_heir</key>
+  <category>Clyde Space</category>
+  <import>from ax25_encode_heir import ax25_encode_heir  # grc-generated hier_block</import>
+  <make>ax25_encode_heir(
+    destination_callsign=$destination_callsign,
+    destination_ssid=$destination_ssid,
+    post_flag_quantity=$post_flag_quantity,
+    post_sync_quantity=$post_sync_quantity,
+    pre_flag_quantity=$pre_flag_quantity,
+    pre_sync_quantity=$pre_sync_quantity,
+    source_callsign=$source_callsign,
+    source_ssid=$source_ssid,
+    sync_value=$sync_value,
+)</make>
+  <callback>set_destination_callsign($destination_callsign)</callback>
+  <callback>set_destination_ssid($destination_ssid)</callback>
+  <callback>set_post_flag_quantity($post_flag_quantity)</callback>
+  <callback>set_post_sync_quantity($post_sync_quantity)</callback>
+  <callback>set_pre_flag_quantity($pre_flag_quantity)</callback>
+  <callback>set_pre_sync_quantity($pre_sync_quantity)</callback>
+  <callback>set_source_callsign($source_callsign)</callback>
+  <callback>set_source_ssid($source_ssid)</callback>
+  <callback>set_sync_value($sync_value)</callback>
+  <param>
+    <name>Destination Callsign</name>
+    <key>destination_callsign</key>
+    <value>"SPACE"</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Destination SSID</name>
+    <key>destination_ssid</key>
+    <value>0</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Post-Flag Quantity </name>
+    <key>post_flag_quantity</key>
+    <value>16</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Post-Sync Quantity </name>
+    <key>post_sync_quantity</key>
+    <value>16</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Pre-Flag Quantity </name>
+    <key>pre_flag_quantity</key>
+    <value>16</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Pre-Sync Quantity </name>
+    <key>pre_sync_quantity</key>
+    <value>128</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Source Callsign</name>
+    <key>source_callsign</key>
+    <value>"EARTH"</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Source SSID</name>
+    <key>source_ssid</key>
+    <value>0</value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Sync Value</name>
+    <key>sync_value</key>
+    <value>85</value>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>pdus in</name>
+    <type>message</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+    <vlen>1</vlen>
+  </source>
+  <doc>Thomas Parry
+Receive PDUs and output tagged streams ready for line coding
+/home/thomasp/.grc_gnuradio/ax25_encode_heir.py</doc>
+  <grc_source>/home/thomasp/GroundStation/GNURadio/Hierarchical_Blocks/AX25_Encode_Wrap.grc</grc_source>
+</block>

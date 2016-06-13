@@ -1,0 +1,10 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/build/swig/channelcoding_swig_swig_2d0df.cpp
+

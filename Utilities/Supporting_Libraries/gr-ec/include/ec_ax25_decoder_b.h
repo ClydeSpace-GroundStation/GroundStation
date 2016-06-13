@@ -41,9 +41,9 @@ class EC_API ec_ax25_decoder_b : public gr::sync_block
  private:
   static const int           SUCCESS      = 1;
   static const int           FAIL         = 0;
-  static const int           BIT_BUF_MAX  = 2791; // Allow for up to 20% bitstuffing
+  static const int           BIT_BUF_MAX  = 4000; //2791; // Allow for up to 20% bitstuffing
   static const int           FRAME_BUF_MAX= 308;  // Allow for no stuffed bits
-  static const int           FRAME_MAX    = 350;  //256 bit info field plus address and other fields
+  static const int           FRAME_MAX    = 275;  // 256 byte info field plus address and other fields
   static const unsigned char FLAG         = 0x7e;
   static const int           HUNT         = 0;
   static const int           IDLE         = 1;

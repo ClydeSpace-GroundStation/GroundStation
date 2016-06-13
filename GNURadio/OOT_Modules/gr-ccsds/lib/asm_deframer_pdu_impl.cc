@@ -46,8 +46,10 @@ namespace gr {
               gr::io_signature::make(0, 0, 0))
     {
 
+      // f = fopen("log.txt","w");
+
       // set up the PDU port parameters
-      message_port_register_out(PDU_PORT_ID);
+      message_port_register_out(pmt::mp("pdus"));
       // message_port_register_in(pmt::mp("generate"));
       // set_msg_handler(pmt::mp("generate"), boost::bind(&asm_deframer_pdu_impl::generate_pdu, this, _1));
 
@@ -64,10 +66,10 @@ namespace gr {
       _out_i = 0;
 
       // set up the tagged output
-      std::stringstream str;
-      str << name() << unique_id();
-      d_me = pmt::string_to_symbol(str.str());
-      d_key = pmt::string_to_symbol("packet_length");
+      // std::stringstream str;
+      // str << name() << unique_id();
+      // d_me = pmt::string_to_symbol(str.str());
+      // d_key = pmt::string_to_symbol("packet_length");
 
 
       unsigned char temp_array[255] = {255, 72, 14, 192, 154, 13, 112, 188, 142, 44, 147, 173, 167, 183, 70, 206, 90, 151, 125, 204, 50, 162, 191, 62, 10, 16, 241, 136, 148, 205,
@@ -136,12 +138,19 @@ namespace gr {
 
           // std::cout << hamming_distance << std::endl;
 
+          // fprintf(f,"Distance = %d,\tShift Register = ",hamming_distance);
+          // for(int i=0; i<32; i++) {
+          //   fprintf(f, "%d", 0x01&_data_shift_reg>>i);
+          // }
+          // fprintf(f, "\n");
+
            // does the hamming_distance meet the requirements for preamble match
            if (hamming_distance <= _distance) {
               // std::cout << "here." << std::endl;
              _state = DATA;
              _nshift = 0;
              _data_shift_reg = 0;
+            //  std::cout << "ASM found!" << std::endl;
             //  add_item_tag( 0,                                           // stream id
             //               abs_out_sample_cnt,                           // sample
             //               d_key,                                        // frame info
@@ -157,6 +166,8 @@ namespace gr {
            // if a byte has been received, save it
            //if (((++_nshift) % 8) == 0) {
            if (++_nshift >= 8) {
+
+            //  fprintf(f,"Byte %d added to output vector.\n",_out_i);
 
              // derandomise the data?
              if(_randomise == 1) {
@@ -181,7 +192,8 @@ namespace gr {
                _nshift = 0;
                _out_i = 0;
 
-               //  std::cout << "Full frame found." << std::endl;
+              //  std::cout << "Full frame found." << std::endl;
+              //  fprintf(f, "Full frame found.\n");
 
                // send the vector
                 // pmt::pmt_t vecpmt(pmt::make_blob(&_output_vector[0], _block_size*_interleave));
@@ -195,11 +207,20 @@ namespace gr {
 
               //  pmt::pmt_t pdu = pmt::cons(d_pdu_meta, d_pdu_vector);
 
-               pmt::pmt_t vecpmt(pmt::make_blob(&_output_vector[0], _block_size*_interleave));
+              //  pmt::pmt_t vecpmt(pmt::make_blob(&_output_vector[0], _block_size*_interleave));
+              //  pmt::pmt_t pdu(pmt::cons(pmt::PMT_NIL, vecpmt));
+               //
+              //  message_port_pub(PDU_PORT_ID, pdu);
+              //  _output_vector.resize(0);
+
+              //  pmt::pmt_t vecpmt(pmt::make_blob(&_output_vector[0], _block_size*_interleave));
+               pmt::pmt_t vecpmt = pmt::init_u8vector(_block_size*_interleave, (const uint8_t*)&_output_vector[0]);
                pmt::pmt_t pdu(pmt::cons(pmt::PMT_NIL, vecpmt));
 
-               message_port_pub(PDU_PORT_ID, pdu);
+               message_port_pub(pmt::mp("pdus"), pdu);
                _output_vector.resize(0);
+
+              //  std::cout << "PDU published" << std::endl;
              }
            }
            break;

@@ -45,8 +45,8 @@
     <name>in</name>
     <type>byte</type>
   </sink>
-  <!-- <source>
+  <source>
     <name>pdus</name>
     <type>message</type>
-  </source> -->
+  </source>
 </block>

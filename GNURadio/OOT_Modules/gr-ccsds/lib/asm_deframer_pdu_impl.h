@@ -51,7 +51,10 @@ namespace gr {
       int _interleave;
       int _block_size;
 
-      pmt::pmt_t d_key, d_me; //d_key is the tag name, d_me is the block name + unique ID
+      // pmt::pmt_t d_key, d_me; //d_key is the tag name, d_me is the block name + unique ID
+
+      // FILE *f;
+
 
       enum {
         ACCESS_CODE=0,

@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::channelcoding::binary_symmetric_channel_impl</compoundname>
+    <basecompoundref refid="classgr_1_1channelcoding_1_1binary__symmetric__channel" prot="public" virt="non-virtual">gr::channelcoding::binary_symmetric_channel</basecompoundref>
+    <includes refid="binary__symmetric__channel__impl_8h" local="no">binary_symmetric_channel_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a9b563fd89f02c5b2009445f57c6e4e8a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::channelcoding::binary_symmetric_channel_impl::d_ber</definition>
+        <argsstring></argsstring>
+        <name>d_ber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" line="38" column="1" bodyfile="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a7b653f7ec2d0e192db52d53c0bb6840e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::channelcoding::binary_symmetric_channel_impl::d_bits_per_byte</definition>
+        <argsstring></argsstring>
+        <name>d_bits_per_byte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" line="39" column="1" bodyfile="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a8ec52e96fa12472a6a55658e5a7823e5" prot="private" static="no" mutable="no">
+        <type>gr::random</type>
+        <definition>gr::random gr::channelcoding::binary_symmetric_channel_impl::d_random</definition>
+        <argsstring></argsstring>
+        <name>d_random</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" line="40" column="1" bodyfile="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a5f25e91819d8dbe2f9417889e99b2309" prot="private" static="no" mutable="no">
+        <type>gr::thread::mutex</type>
+        <definition>gr::thread::mutex gr::channelcoding::binary_symmetric_channel_impl::d_mutex</definition>
+        <argsstring></argsstring>
+        <name>d_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" line="41" column="1" bodyfile="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a1d6b227f6045d3017685ec454808e634" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::channelcoding::binary_symmetric_channel_impl::binary_symmetric_channel_impl</definition>
+        <argsstring>(float ber, unsigned bits_per_byte, long seed)</argsstring>
+        <name>binary_symmetric_channel_impl</name>
+        <param>
+          <type>float</type>
+          <declname>ber</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>bits_per_byte</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>seed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a36a484cc93e0f2210845c7e6fc8685c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::channelcoding::binary_symmetric_channel_impl::~binary_symmetric_channel_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~binary_symmetric_channel_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1aeb8232e0fdeeb575728ddda60e78d64f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float gr::channelcoding::binary_symmetric_channel_impl::ber</definition>
+        <argsstring>()</argsstring>
+        <name>ber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" line="47" column="1" bodyfile="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" bodystart="47" bodyend="47"/>
+        <references refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a56c652d9df7430dbd6e002f7d813f9ae">set_ber</references>
+        <references refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a90a1a4410e63f5e45a2bccb3299adeb2">work</references>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a56c652d9df7430dbd6e002f7d813f9ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::channelcoding::binary_symmetric_channel_impl::set_ber</definition>
+        <argsstring>(float ber)</argsstring>
+        <name>set_ber</name>
+        <param>
+          <type>float</type>
+          <declname>ber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" line="48" column="1"/>
+        <referencedby refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1aeb8232e0fdeeb575728ddda60e78d64f" compoundref="binary__symmetric__channel__impl_8h" startline="47" endline="47">ber</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a90a1a4410e63f5e45a2bccb3299adeb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::channelcoding::binary_symmetric_channel_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" line="51" column="1"/>
+        <referencedby refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1aeb8232e0fdeeb575728ddda60e78d64f" compoundref="binary__symmetric__channel__impl_8h" startline="47" endline="47">ber</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>gr::channelcoding::binary_symmetric_channel_impl</label>
+        <link refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="6">
+        <label>gr::channelcoding::binary_symmetric_channel</label>
+        <link refid="classgr_1_1channelcoding_1_1binary__symmetric__channel"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>gr::channelcoding::binary_symmetric_channel_impl</label>
+        <link refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="9">
+        <label>gr::channelcoding::binary_symmetric_channel</label>
+        <link refid="classgr_1_1channelcoding_1_1binary__symmetric__channel"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" line="32" column="1" bodyfile="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/lib/binary_symmetric_channel_impl.h" bodystart="31" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1aeb8232e0fdeeb575728ddda60e78d64f" prot="public" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel_impl</scope><name>ber</name></member>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a1d6b227f6045d3017685ec454808e634" prot="public" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel_impl</scope><name>binary_symmetric_channel_impl</name></member>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a9b563fd89f02c5b2009445f57c6e4e8a" prot="private" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel_impl</scope><name>d_ber</name></member>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a7b653f7ec2d0e192db52d53c0bb6840e" prot="private" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel_impl</scope><name>d_bits_per_byte</name></member>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a5f25e91819d8dbe2f9417889e99b2309" prot="private" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel_impl</scope><name>d_mutex</name></member>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a8ec52e96fa12472a6a55658e5a7823e5" prot="private" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel_impl</scope><name>d_random</name></member>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel_1a209dc58e4a09b27e2281f6b18a7e2923" prot="public" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a56c652d9df7430dbd6e002f7d813f9ae" prot="public" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel_impl</scope><name>set_ber</name></member>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel_1ace482d1a88ac377b94cb054b4a1882d2" prot="public" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a90a1a4410e63f5e45a2bccb3299adeb2" prot="public" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel__impl_1a36a484cc93e0f2210845c7e6fc8685c0" prot="public" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel_impl</scope><name>~binary_symmetric_channel_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

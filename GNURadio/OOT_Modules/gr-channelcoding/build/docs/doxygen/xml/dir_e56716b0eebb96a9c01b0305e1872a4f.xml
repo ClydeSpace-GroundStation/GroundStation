@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_e56716b0eebb96a9c01b0305e1872a4f" kind="dir">
+    <compoundname>channelcoding</compoundname>
+    <innerfile refid="api_8h">api.h</innerfile>
+    <innerfile refid="binary__symmetric__channel_8h">binary_symmetric_channel.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/include/channelcoding/"/>
+  </compounddef>
+</doxygen>

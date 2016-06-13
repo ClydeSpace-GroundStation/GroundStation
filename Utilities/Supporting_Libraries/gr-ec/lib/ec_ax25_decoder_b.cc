@@ -427,6 +427,7 @@ ec_ax25_decoder_b::hdlc_state_machine(unsigned char next_bit)
 		     //std::cout << "State = FRAMING   bit_buf_size = "<< d_bit_buf_size << std::endl;
 		// Collect frame bits in bit_buf for later unstuffing
 		if(d_bit_buf_size < BIT_BUF_MAX){
+			// std::cout << "index: " << d_bit_buf_size << "   BIT_BUF_MAX: " << BIT_BUF_MAX << std::endl;
 			d_bit_buf[d_bit_buf_size] = next_bit;
 			d_bit_buf_size++;
 		}
@@ -443,7 +444,7 @@ ec_ax25_decoder_b::hdlc_state_machine(unsigned char next_bit)
 			d_byte = 0x00;
 			d_accumulated_bits = 0;
 			next_state = HUNT;
-			//std::cout << "Aborted here1" << std::endl;
+			// std::cout << "Aborted here1" << std::endl;
 		}
 		else{
 			// Pack bit into byte buffer and check for FLAG
@@ -452,7 +453,7 @@ ec_ax25_decoder_b::hdlc_state_machine(unsigned char next_bit)
 				// Keep on collecting frame bits
 				//fprintf(stderr, "  byte = %x\n", d_byte);
 				next_state = FRAMING;
-				//std::cout << "Aborted here2" << std::endl;
+				// std::cout << "Aborted here2" << std::endl;
 			}
 			else {
 			// It's a FLAG. Frame is terminated.
@@ -464,6 +465,8 @@ ec_ax25_decoder_b::hdlc_state_machine(unsigned char next_bit)
 			// see if we got a good frame.
 			status = unstuff(d_bit_buf_size, d_bit_buf, &frame_size, frame_buf);
 			// std::cout << "Status 1: " << status << "   Frame size: " << frame_size << std::endl;
+
+			// std::cout << "Frame size: " << frame_size << "   Status: " << status << std::endl;
 
 			if(frame_size > 13 & frame_size < FRAME_MAX & status != FAIL){
 					// Size OK. Check crc
@@ -498,8 +501,12 @@ ec_ax25_decoder_b::hdlc_state_machine(unsigned char next_bit)
 						}
 					// } else {
 					// 	std::cout << "Frame failed" << std::endl;
-					}
-				}
+				} //else {
+						//std::cout << "Failed1" << std::endl;
+					//}
+				} //else {
+					//std::cout << "Failed2" << std::endl;
+				//}
 
 		        	// Hunt for next flag or frame
 		        	d_byte = 0x00;

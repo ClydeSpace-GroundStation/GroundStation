@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2016 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2016 Clyde Space.
  *
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,8 +31,6 @@ namespace gr {
      private:
       uint8_t _dest_addr[6];
       uint8_t _src_addr[6];
-      // uint8_t *_dest_addr;
-      // uint8_t *_src_addr;
       uint8_t _dest_ssid;
       uint8_t _src_ssid;
 
@@ -49,16 +47,13 @@ namespace gr {
       uint8_t bit_reverse(uint8_t data);
       void bit_reverse_arr(uint8_t *data, uint32_t length);
       void add_header();
-      void add_CRC( uint8_t input_data_length );
+      void add_CRC( uint32_t input_data_length );
       uint32_t bit_stuff( uint8_t *in, uint8_t *out, uint32_t N);
       void output_frame(pmt::pmt_t input_pdu);
-
 
      public:
       ax25_encoder_impl(const std::string &dest_addr, const std::string &src_addr, int dest_ssid, int src_ssid);
       ~ax25_encoder_impl();
-
-
 
     };
 

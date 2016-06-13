@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2016 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2016 Clyde Space.
  *
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -95,7 +95,7 @@ namespace gr {
 
 
     /*
-     * Function to reverse order of the bits in a byte array (ie. MSB to LSB)
+     * Function to reverse order of the bits in a byte (ie. MSB to LSB)
      */
     uint8_t ax25_encoder_impl::bit_reverse(uint8_t data) {
       return ((data * 0x80200802ULL) & 0x0884422110ULL) * 0x0101010101ULL >> 32;
@@ -107,9 +107,7 @@ namespace gr {
     void ax25_encoder_impl::bit_reverse_arr(uint8_t *data, uint32_t length) {
 
       for(int i=0; i < length; i++) {
-        // printf("original: %x", data[i]);
         data[i] = ((data[i] * 0x80200802ULL) & 0x0884422110ULL) * 0x0101010101ULL >> 32;
-        // printf(",  bit reversed: %x\n", data[i]);
       }
     }
 
@@ -141,48 +139,20 @@ namespace gr {
 
 
 
-    /*  Calculate and add the CRC to the end of the frame
+    /*  Calculate and append the CRC to the end of the frame
      */
-    void ax25_encoder_impl::add_CRC( uint8_t input_data_length ) {
+    void ax25_encoder_impl::add_CRC( uint32_t input_data_length ) {
 
       // calculate the frame length
       int frame_length = input_data_length + 16;
 
       // create the CRC
-      // boost::crc_optimal<16, 0x1021, 0xFFFF, 0, true, true>  crc_ccitt;
       boost::crc_optimal<16, 0x1021, 0xFFFF, 0xFFFF, false, false>  crc_ccitt;
       crc_ccitt = std::for_each(_frame, _frame + frame_length, crc_ccitt );
-
-      // printf("CRC: %x\n",crc_ccitt());
-
-      // boost::crc_ccitt_type checksum_agent;
-      // checksum_agent.process_bytes(&_frame[1], frame_length);
 
       // insert the CRC into the frame
       _frame[frame_length] = (crc_ccitt() & 0xFF00) >> 8;
       _frame[frame_length+1] = (crc_ccitt() & 0x00FF);
-
-
-      // printf("CRC = %x %x\n", _frame[frame_length], _frame[frame_length+1] );
-
-      // uint16_t coeffs[2] = {0x1021, 0x8408};
-      // uint16_t xorr[2] = {0x0000, 0xFFFF};
-      // bool reflect_in[2] = {false, true};
-      // bool reflect_rem[2] = {false, true};
-      //
-      // for(int i = 0; i < 16; i++) {
-      //
-      //   uint16_t coeffs_i = coeffs[0x01&(i>>3)];
-      //   uint16_t xorr_i = xorr[0x01&(i>>2)];
-      //   bool reflect_in_i = reflect_in[0x01&(i>>1)];
-      //   bool reflect_rem_i = reflect_rem[0x01&(i>>0)];
-      //
-      //   boost::crc_optimal<16, coeffs_i, 0xFFFF, xorr_i, reflect_in_i, reflect_in_rem>  crc_ccitt;
-      //   crc_ccitt = std::for_each(_frame, _frame + frame_length, crc_ccitt );
-      //
-      //   printf("Coeff: %x,  xor= %x,   reflect_in= %x,  reflect_rem= %x,   CRC = %x\n", coeffs[0x01&(i>>3)], xorr[0x01&(i>>2)], reflect_in[0x01&(i>>1)], reflect[0x01&(i>>0)], crc_ccitt() & 0xFFFF );
-      //
-      // }
 
     }
 
@@ -229,17 +199,6 @@ namespace gr {
        * are reported back.
        */
 
-      // std::cout << "N: " << N << std::endl;
-       //
-       //
-      //  std::cout << "Input:" << std::endl;
-      //  // print the output of the frame for debug
-      //  for( int i=0; i < N/8; i++) {
-      //    printf("%02x ", in[i]);
-      //  }
-      //  printf("\n \n");
-
-
        /* Always clear the next output byte
         * so you don't have to 'write' zeros
         */
@@ -247,7 +206,7 @@ namespace gr {
 
       int stuff_count = 0;
 
-      /* Input byte loop */
+      // input byte loop
       while(N--){
 
         out_N++;
@@ -257,19 +216,19 @@ namespace gr {
           out[o] = 0;
         }
 
-        bit = in[i] & (1 << b); /* anything > 0 is a bit */
+        // anything > 0 is a bit
+        bit = in[i] & (1 << b);
 
         if (bit){
-          /* Bit is a 1 */
+          // bit is a 1
           out[o] |= (1 << out_b);
           one_n++;
 
           if(one_n == BIT_STUFF_ONES){
 
-            //std::cout << "1 stuffed" << std::endl;
             stuff_count += 1;
 
-            /* Update output counters to bit-stuff */
+            // update output counters to bit-stuff
             out_N++;
             out_b = (out_b - 1) & 0x07;
 
@@ -277,36 +236,24 @@ namespace gr {
               o = (o + 1) & 0xFFFF;
               out[o] = 0;
             }
-            /* Reset counter */
+            // reset counter
             one_n = 0;
           }
         } else {
-          /* Bit is a 0    */
-          /* Reset counter */
+          // bit is a 0
+          // reset counter
           one_n = 0;
         }
 
-        /* Update output counters */
+        // update output counters
         out_b = (out_b - 1) & 0x07;
         b = (b - 1) & 0x07;
 
         if(b == 7){
-          /* move to the next input
-           * input array element */
+          // move to the next input input array element
           i++;
         }
       }
-
-      // std::cout << stuff_count << " bits stuffed" << std::endl;
-      //
-      //
-      // std::cout << "Output:" << std::endl;
-      // // print the output of the frame for debug
-      // for( int i=0; i < (out_N/8)+1; i++ ) {
-      //   printf("%02x ", out[i]);
-      // }
-      // printf("\n \n");
-
 
       return out_N;
     }
@@ -328,9 +275,7 @@ namespace gr {
       // retrieve the data
       size_t offset(0);
       const uint8_t* input_data = (const uint8_t*) pmt::uniform_vector_elements(vector, offset);
-      int input_data_length = pmt::blob_length(vector);
-
-      // std::cout << "Data length: " << input_data_length << std::endl;
+      uint32_t input_data_length = pmt::blob_length(vector);
 
       // add the header to the frame
       ax25_encoder_impl::add_header();
@@ -344,15 +289,10 @@ namespace gr {
       // append the CRC
       ax25_encoder_impl::add_CRC(input_data_length);
 
-
-
-      // uint32_t frame_length = input_data_length;
-
-
       // bit stuff to avoid 0b01111110 in frame
       uint32_t frame_length_bits = ax25_encoder_impl::bit_stuff(_frame, &_bitstuffed_frame[1], 8*(input_data_length+18));
 
-      // uint32_t frame_length = (frame_length_bits / 8) + ((frame_length_bits % 8) + 7) / 8 ;
+      // figure to append the CRC in a bit order (may not be on byte boundary)
       uint8_t extra_byte = 1;
 
       if((frame_length_bits % 8) > 0){
@@ -360,24 +300,10 @@ namespace gr {
       }
 
       uint32_t frame_length = (frame_length_bits / 8) + extra_byte + 1;
-
-      // std::cout << "Input length: " << 8*(input_data_length+18) << "Length bytes: " << frame_length << "    Length bits: " << frame_length_bits  << "   length modulo: " << frame_length_bits%8 << std::endl;
-
       _bitstuffed_frame[0] = 0x7E;
-
 
       _bitstuffed_frame[frame_length - 1] = _bitstuffed_frame[frame_length-1] | (0xFF & (0x7E >> frame_length_bits%8));
       _bitstuffed_frame[frame_length] = 0xFF & (0x7E00 >> frame_length_bits%8);
-
-      // _bitstuffed_frame[(int)frame_length_bits/8 + 1-(int)((frame_length_bits%8)/8)] = _bitstuffed_frame[(int)frame_length_bits/8] | (0x7E >> (8 - frame_length_bits%8));
-      // _bitstuffed_frame[(int)frame_length_bits/8 + 1-(int)((frame_length_bits%8)/8) + 1] = 0x7E << frame_length_bits%8;
-
-      // _bitstuffed_frame[frame_length] = _bitstuffed_frame[frame_length] | (0x7E >> (8 - frame_length_bits%8));
-      // _bitstuffed_frame[frame_length + 1] = 0x7E << frame_length_bits%8;
-
-
-      // _bitstuffed_frame[frame_length+1] = 0x7E;
-
 
       // send the vector as a PDU
       pmt::pmt_t vecpmt(pmt::make_blob(_bitstuffed_frame, frame_length + 1));

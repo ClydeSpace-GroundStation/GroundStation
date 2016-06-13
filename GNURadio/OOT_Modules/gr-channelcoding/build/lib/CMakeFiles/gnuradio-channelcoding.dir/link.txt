@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libgnuradio-channelcoding.so -o libgnuradio-channelcoding.so CMakeFiles/gnuradio-channelcoding.dir/binary_symmetric_channel_impl.cc.o -lboost_filesystem -lboost_system /usr/local/lib/libgnuradio-runtime.so /usr/local/lib/libgnuradio-pmt.so -Wl,-rpath,/usr/local/lib: 

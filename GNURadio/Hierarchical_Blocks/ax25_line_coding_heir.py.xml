@@ -1,0 +1,30 @@
+<block>
+  <name>AX.25 Line Coding Heir Block</name>
+  <key>ax25_line_coding_heir</key>
+  <category>Clyde Space</category>
+  <import>from ax25_line_coding_heir import ax25_line_coding_heir  # grc-generated hier_block</import>
+  <make>ax25_line_coding_heir(
+    scrambler=$scrambler,
+)</make>
+  <callback>set_scrambler($scrambler)</callback>
+  <param>
+    <name>Scrambler</name>
+    <key>scrambler</key>
+    <value>0</value>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+    <vlen>1</vlen>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+    <vlen>1</vlen>
+  </source>
+  <doc>Thomas Parry
+Performs the line coding neccesary for AX.25.  Set "scrambler" to 0 to disable scrambling, set to 1 to enable.
+/home/thomasp/.grc_gnuradio/ax25_line_coding_heir.py</doc>
+  <grc_source>/home/thomasp/GroundStation/GNURadio/Hierarchical_Blocks/AX25_Line_Coding.grc</grc_source>
+</block>

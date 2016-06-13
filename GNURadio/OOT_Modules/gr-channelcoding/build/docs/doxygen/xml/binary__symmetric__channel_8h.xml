@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="binary__symmetric__channel_8h" kind="file" language="C++">
+    <compoundname>binary_symmetric_channel.h</compoundname>
+    <includes refid="api_8h" local="no">channelcoding/api.h</includes>
+    <includes local="no">gnuradio/sync_block.h</includes>
+    <includedby refid="binary__symmetric__channel__impl_8h" local="no">binary_symmetric_channel_impl.h</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>channelcoding/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>gnuradio/sync_block.h</label>
+      </node>
+      <node id="7">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="5">
+        <label>binary_symmetric_channel.h</label>
+        <link refid="binary_symmetric_channel.h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="10">
+        <label>binary_symmetric_channel_impl.h</label>
+        <link refid="binary__symmetric__channel__impl_8h"/>
+      </node>
+      <node id="9">
+        <label>binary_symmetric_channel.h</label>
+        <link refid="binary_symmetric_channel.h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classgr_1_1channelcoding_1_1binary__symmetric__channel" prot="public">gr::channelcoding::binary_symmetric_channel</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1channelcoding">gr::channelcoding</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/include/channelcoding/binary_symmetric_channel.h"/>
+  </compounddef>
+</doxygen>

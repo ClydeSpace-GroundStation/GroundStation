@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1channelcoding_1_1binary__symmetric__channel" kind="class" language="C++" prot="public">
+    <compoundname>gr::channelcoding::binary_symmetric_channel</compoundname>
+    <basecompoundref prot="public" virt="virtual">sync_block</basecompoundref>
+    <includes refid="binary__symmetric__channel_8h" local="no">binary_symmetric_channel.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1channelcoding_1_1binary__symmetric__channel_1ace482d1a88ac377b94cb054b4a1882d2" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1channelcoding_1_1binary__symmetric__channel" kindref="compound">binary_symmetric_channel</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;binary_symmetric_channel&gt; gr::channelcoding::binary_symmetric_channel::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/include/channelcoding/binary_symmetric_channel.h" line="39" column="1" bodyfile="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/include/channelcoding/binary_symmetric_channel.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1channelcoding_1_1binary__symmetric__channel_1a209dc58e4a09b27e2281f6b18a7e2923" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1channelcoding_1_1binary__symmetric__channel_1ace482d1a88ac377b94cb054b4a1882d2" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::channelcoding::binary_symmetric_channel::make</definition>
+        <argsstring>(float ber, unsigned bits_per_byte, long seed)</argsstring>
+        <name>make</name>
+        <param>
+          <type>float</type>
+          <declname>ber</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>bits_per_byte</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>seed</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1channelcoding_1_1binary__symmetric__channel" kindref="compound">channelcoding::binary_symmetric_channel</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1channelcoding_1_1binary__symmetric__channel" kindref="compound">channelcoding::binary_symmetric_channel</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1channelcoding_1_1binary__symmetric__channel_1a209dc58e4a09b27e2281f6b18a7e2923" kindref="member">channelcoding::binary_symmetric_channel::make</ref> is the public interface for creating new instances. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/include/channelcoding/binary_symmetric_channel.h" line="49" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="0">
+        <label>gr::channelcoding::binary_symmetric_channel</label>
+        <link refid="classgr_1_1channelcoding_1_1binary__symmetric__channel"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="2">
+        <label>gr::channelcoding::binary_symmetric_channel</label>
+        <link refid="classgr_1_1channelcoding_1_1binary__symmetric__channel"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/include/channelcoding/binary_symmetric_channel.h" line="37" column="1" bodyfile="/home/thomasp/GroundStation/GNURadio/OOT_Modules/gr-channelcoding/include/channelcoding/binary_symmetric_channel.h" bodystart="36" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel_1a209dc58e4a09b27e2281f6b18a7e2923" prot="public" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel</scope><name>make</name></member>
+      <member refid="classgr_1_1channelcoding_1_1binary__symmetric__channel_1ace482d1a88ac377b94cb054b4a1882d2" prot="public" virt="non-virtual"><scope>gr::channelcoding::binary_symmetric_channel</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
